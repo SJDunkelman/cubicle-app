@@ -18,9 +18,10 @@ type CharacterStats struct {
 	Perception   Stat
 	Agility      Stat
 	Creativity   Stat
-	Endurance    Stat
+	//Endurance    Stat
 	Marksmanship Stat
 	Speed        Stat
+	Stealth      Stat
 
 	// Skill Stats
 	Crafting     Stat
@@ -46,9 +47,10 @@ func NewStats() *CharacterStats {
 		Perception:   Stat{XP: 100, Level: 10},
 		Agility:      Stat{XP: 100, Level: 10},
 		Creativity:   Stat{XP: 100, Level: 10},
-		Endurance:    Stat{XP: 100, Level: 10},
+		//Endurance:    Stat{XP: 100, Level: 10},
 		Marksmanship: Stat{XP: 100, Level: 10},
 		Speed:        Stat{XP: 100, Level: 10},
+		Stealth:      Stat{XP: 100, Level: 10},
 
 		// Skill Stats
 		Crafting:     Stat{XP: 10, Level: 1},
@@ -87,12 +89,14 @@ func (s *CharacterStats) getStat(statName string) *Stat {
 		return &s.Agility
 	case "Creativity":
 		return &s.Creativity
-	case "Endurance":
-		return &s.Endurance
+	//case "Endurance":
+	//	return &s.Endurance
 	case "Marksmanship":
 		return &s.Marksmanship
 	case "Speed":
 		return &s.Speed
+	case "Stealth":
+		return &s.Stealth
 	case "Crafting":
 		return &s.Crafting
 	case "Mining":

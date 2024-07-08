@@ -22,9 +22,10 @@ func (s *CharacterStatsService) GetBaseStats() map[string]Stat {
 		"Perception":   baseStats.Perception,
 		"Agility":      baseStats.Agility,
 		"Creativity":   baseStats.Creativity,
-		"Endurance":    baseStats.Endurance,
+		//"Endurance":    baseStats.Endurance,
 		"Marksmanship": baseStats.Marksmanship,
 		"Speed":        baseStats.Speed,
+		"Stealth":      baseStats.Stealth,
 	}
 }
 
