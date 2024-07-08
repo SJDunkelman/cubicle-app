@@ -16,11 +16,14 @@ func main() {
 	// Initialise services
 	statsService := NewCharacterStatsService()
 
+	notificationService := NewNotificationService()
+
 	app := application.New(application.Options{
 		Name:        "Cubicle",
 		Description: "A demo of using raw HTML & CSS",
 		Services: []application.Service{
 			application.NewService(statsService),
+			application.NewService(notificationService),
 		},
 		Assets: application.AssetOptions{
 			Handler: application.AssetFileServerFS(assets),
@@ -31,7 +34,9 @@ func main() {
 	})
 
 	app.NewWebviewWindowWithOptions(application.WebviewWindowOptions{
-		Title: "Window 1",
+		Title:  "Window 1",
+		Width:  1024,
+		Height: 768,
 		Mac: application.MacWindow{
 			InvisibleTitleBarHeight: 50,
 			Backdrop:                application.MacBackdropTranslucent,
