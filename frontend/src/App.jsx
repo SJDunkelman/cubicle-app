@@ -4,6 +4,7 @@ import { NotificationService } from "../bindings/changeme";
 import {Button} from "@/components/ui/button.jsx";
 import NewQuest from "@/components/quest/NewQuest.jsx";
 import QuestSummary from "@/components/quest/QuestSummary.jsx";
+import CreateCharacter from "@/components/character/CreateCharacter.jsx";
 
 function App() {
     const showNotification = () => {
@@ -16,7 +17,8 @@ function App() {
             {/*<h1 className="text-2xl font-bold mb-4 text-white">Character Stats</h1>*/}
             {/*<CharacterStats />*/}
             {/*<NewQuest />*/}
-            <QuestSummary />
+            {/*<QuestSummary />*/}
+            <CreateCharacter />
         </div>
     );
 }
