@@ -29,8 +29,8 @@ const CharacterStats = () => {
     };
 
     const renderStats = (stats, title) => (
-        <>
-            <h2 className="text-xl font-bold my-4">{title}</h2>
+        <div className="flex flex-col justify-between h-max border-2">
+            <h2 className="text-xl font-bold my-4 text-white font-menlo">{title}</h2>
             <div className="flex flex-wrap justify-center">
                 {Object.entries(stats).map(([name, stat]) => (
                     <StatCard
@@ -41,7 +41,7 @@ const CharacterStats = () => {
                     />
                 ))}
             </div>
-        </>
+        </div>
     );
 
     return (
