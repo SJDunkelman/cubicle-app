@@ -33,7 +33,7 @@ const skillIcons = {
 
 const StatCard = ({ name, stat, nextLevelXP }) => {
     return (
-        <Card className="w-[220px] m-2 font-menlo">
+        <Card className="w-[220px] m-2 font-menlo h-min">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-0">
                 <CardTitle className="text-lg font-bold">{name}</CardTitle>
             </CardHeader>

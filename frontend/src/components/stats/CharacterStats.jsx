@@ -28,24 +28,21 @@ const CharacterStats = () => {
         setShowBaseStats(!showBaseStats);
     };
 
-    const renderStats = (stats, title) => (
-        <div className="flex flex-col justify-between h-max border-2">
-            <h2 className="text-xl font-bold my-4 text-white font-menlo">{title}</h2>
-            <div className="flex flex-wrap justify-center">
-                {Object.entries(stats).map(([name, stat]) => (
-                    <StatCard
-                        key={name}
-                        name={name}
-                        stat={stat}
-                        nextLevelXP={nextLevelXP[name]}
-                    />
-                ))}
-            </div>
+    const renderStats = (stats) => (
+        <div className="grid grid-cols-3 gap-2 justify-items-center content-start h-full p-4">
+            {Object.entries(stats).map(([name, stat]) => (
+                <StatCard
+                    key={name}
+                    name={name}
+                    stat={stat}
+                    nextLevelXP={nextLevelXP[name]}
+                />
+            ))}
         </div>
     );
 
     return (
-        <div className="flex items-center justify-center max-h-[500px]">
+        <div className="flex items-center justify-center h-full">
             <Button
                 onClick={toggleStats}
                 variant="outline"
@@ -56,10 +53,15 @@ const CharacterStats = () => {
                 <ChevronLeftIcon className="h-4 w-4" />
             </Button>
 
-            <div className="flex-grow max-w-3xl">
-                {showBaseStats
-                    ? renderStats(baseStats, "Base Stats")
-                    : renderStats(skillStats, "Skill Stats")}
+            <div className="flex-grow max-w-3xl h-full flex flex-col">
+                <h2 className="text-xl font-bold mb-4 text-white font-menlo text-center">
+                    {showBaseStats ? "Base Stats" : "Skill Stats"}
+                </h2>
+                <div className="flex-grow overflow-hidden items-center justify-center">
+                    {showBaseStats
+                        ? renderStats(baseStats)
+                        : renderStats(skillStats)}
+                </div>
             </div>
 
             <Button
