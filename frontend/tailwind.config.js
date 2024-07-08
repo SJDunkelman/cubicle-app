@@ -26,6 +26,7 @@ module.exports = {
         light_purple: '#41323F',
         grey: '#9F9B90',
         red: '#CB5042',
+        light_red: '#FF6B5C',
         orange: '#F99B15',
         yellow: '#EABA19',
         blue: '#386CB0',
