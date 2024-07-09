@@ -81,40 +81,42 @@ export default function Overview() {
                     {/*  Leave empty for now  */}
                 </div>
             </div>
-            <div className="flex items-center justify-evenly px-4 w-full h-16 border-[1px] border-white/50 rounded-md text-white">
-                <div className="flex flex-col text-light_green">
-                    <p className="text-xs">Left Clicks</p>
-                    <p className="text-2xl">36k</p>
-                </div>
-                <div className="flex flex-col text-light_green">
-                    <p className="text-xs">Right Clicks</p>
-                    <p className="text-2xl">36k</p>
-                </div>
-                <div className="flex flex-col text-light_green">
-                    <p className="text-xs">Keypresses</p>
-                    <p className="text-2xl">36k</p>
-                </div>
-                <div className="flex flex-col text-light_green">
-                    <p className="text-xs">Mouse Movement</p>
-                    <div className="flex items-end space-x-1">
-                        <p className="text-2xl">109k</p>
-                        <span className="text-xs mb-1">feet</span>
-                    </div>
 
-                </div>
-                <div className="flex flex-col text-light_green">
-                    <p className="text-xs">Scroll Time</p>
-                    <div className="flex items-end space-x-1">
-                        <p className="text-2xl">21</p>
-                        <span className="text-xs mb-1">hours</span>
-                    </div>
-                </div>
-            </div>
-            <div className="pt-4 w-full flex-grow">
-                <div className="h-full w-full bg-gray-900 border border-white/50 rounded-md relative">
-                  <span className="absolute -top-6 left-0 bg-white/75 px-2 text-xs text-black">
+            <div className="flex-grow flex flex-col w-full relative pt-6">
+                <span className="absolute -top-0 left-0 bg-white px-2 text-xs text-black">
                     Last 24 hours
                   </span>
+                <div className="flex items-center justify-evenly mb-4 px-4 w-full h-16  rounded-md text-white">
+                    <div className="flex flex-col">
+                        <p className="text-xs">Left Clicks</p>
+                        <p className="text-2xl">36k</p>
+                    </div>
+                    <div className="flex flex-col">
+                        <p className="text-xs">Right Clicks</p>
+                        <p className="text-2xl">36k</p>
+                    </div>
+                    <div className="flex flex-col">
+                        <p className="text-xs">Keypresses</p>
+                        <p className="text-2xl">36k</p>
+                    </div>
+                    <div className="flex flex-col">
+                        <p className="text-xs">Mouse Movement</p>
+                        <div className="flex items-end space-x-1">
+                            <p className="text-2xl">109k</p>
+                            <span className="text-xs mb-1">feet</span>
+                        </div>
+
+                    </div>
+                    <div className="flex flex-col">
+                        <p className="text-xs">Scroll Time</p>
+                        <div className="flex items-end space-x-1">
+                            <p className="text-2xl">21</p>
+                            <span className="text-xs mb-1">hours</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="w-full flex-grow border border-white/50 rounded-md relative">
                 </div>
             </div>
 
