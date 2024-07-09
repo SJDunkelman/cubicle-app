@@ -43,6 +43,24 @@ const generateData = () => {
 
 const data = generateData();
 
+const COLORS = ['blue', 'green', 'yellow', 'red', 'light_green']
+
+const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+        return (
+            <div className="bg-black border-[1px] border-white/75 p-2 rounded">
+                <p className="text-white font-menlo text-sm mb-1">{`Time: ${label}`}</p>
+                {payload.map((entry, index) => (
+                    <p key={index} className="text-sm font-menlo" style={{ color: `var(--color-${COLORS[index]})` }}>
+                        {`${entry.name}: ${entry.value}`}
+                    </p>
+                ))}
+            </div>
+        );
+    }
+    return null;
+};
+
 export default class ActivityLineChart extends PureComponent {
 
     render() {
@@ -67,7 +85,7 @@ export default class ActivityLineChart extends PureComponent {
                         domain={[0, 3000]}
                         ticks={[0, 500, 1000, 1500, 2000, 2500, 3000]}
                     />
-                    <Tooltip />
+                    <Tooltip content={<CustomTooltip />} />
                     <Legend />
                     <Line type="monotone" dataKey="leftClicks" stroke="var(--color-blue)" dot={false} />
                     <Line type="monotone" dataKey="rightClicks" stroke="var(--color-green)" dot={false} />
