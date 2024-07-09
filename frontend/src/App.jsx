@@ -7,6 +7,8 @@ import QuestSummary from "@/components/quest/QuestSummary.jsx";
 import CreateCharacter from "@/components/character/CreateCharacter.jsx";
 import Overview from "@/components/overview/Overview.jsx"
 import appStore from "@/store/appStore.js";
+import ActiveQuests from "@/components/quest/ActiveQuests.jsx";
+import Settings from "@/components/settings/Settings.jsx";
 
 function App() {
     const { currentPage } = appStore();
@@ -26,8 +28,12 @@ function App() {
                 return <NewQuest />;
             case 'quest_summary':
                 return <QuestSummary />;
+            case 'active_quests':
+                return <ActiveQuests />;
             case 'create_character':
                 return <CreateCharacter />;
+            case 'settings':
+                return <Settings />;
             default:
                 return <Overview />;  // Default to Overview if page is not recognized
         }
@@ -35,9 +41,12 @@ function App() {
 
     return (
         <div className="flex flex-col mx-auto h-screen w-screen pt-7 px-2 bg-black font-menlo">
-            <NavigationBar/>
+            <div className="z-50">
+                <NavigationBar />
+            </div>
+
             <div className="flex-grow overflow-auto">
-                <div className="flex items-center justify-center h-full p-7">
+                <div className="flex items-center justify-center h-full p-7 z-0">
                     {renderPage()}
                 </div>
             </div>

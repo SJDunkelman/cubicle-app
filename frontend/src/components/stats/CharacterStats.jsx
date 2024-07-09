@@ -54,7 +54,7 @@ const CharacterStats = () => {
             </Button>
 
             <div className="flex-grow max-w-3xl h-full flex flex-col">
-                <h2 className="text-xl font-bold mb-4 text-white font-menlo text-center">
+                <h2 className="text-xl font-bold mb-1 text-white font-menlo text-center">
                     {showBaseStats ? "Base Stats" : "Skill Stats"}
                 </h2>
                 <div className="flex-grow overflow-hidden items-center justify-center">

@@ -33,7 +33,7 @@ const skillIcons = {
 
 const StatCard = ({ name, stat, nextLevelXP }) => {
     return (
-        <Card className="w-[220px] m-2 font-menlo h-min">
+        <Card className="w-[220px] m-2 font-menlo h-min bg-black border-[1px] border-white/50 text-white">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-0">
                 <CardTitle className="text-lg font-bold">{name}</CardTitle>
             </CardHeader>
@@ -41,7 +41,7 @@ const StatCard = ({ name, stat, nextLevelXP }) => {
                 <div className="flex justify-between">
                     <div className="flex flex-col">
                         <p className="">Level {stat.level}</p>
-                        <p className="text-xs text-muted-foreground">
+                        <p className="text-xs text-light_grey">
                             XP: {stat.xp} / {nextLevelXP}
                         </p>
                     </div>

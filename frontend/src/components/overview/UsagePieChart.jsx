@@ -2,13 +2,13 @@ import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 const data = [
-    { name: 'communication', value: 57 },
-    { name: 'gaming', value: 13 },
-    { name: 'entertainment', value: 13 },
-    { name: 'coding', value: 7 },
+    { name: 'coding', value: 57 },
+    { name: 'audio/music', value: 13 },
+    { name: 'data analysis', value: 13 },
+    { name: 'productivity tools', value: 7 },
     { name: 'research', value: 3 },
-    { name: 'dossing', value: 3 },
-    { name: 'bullshit', value: 1 },
+    { name: 'social media', value: 3 },
+    { name: 'gaming', value: 1 },
 ];
 
 const COLORS = ['green', 'red', 'yellow', 'blue', 'light_red', 'light_blue', 'light_yellow'];

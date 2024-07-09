@@ -1,3 +1,4 @@
+// components/quest/NewQuest.jsx
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -54,9 +55,13 @@ export default function NewQuest() {
 
     if (questCreated) {
         return (
-            <div className="relative w-[600px] h-[600px] ">
-                <img src={questImage} alt="Quest Background" className="w-full h-full object-cover rounded-xl"/>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="relative w-full h-full overflow-hidden">
+                <img
+                    src={questImage}
+                    alt="Quest Background"
+                    className="absolute w-full h-full object-cover object-center rounded-md z-0"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
                     <Card className="w-[350px] bg-white/75 drop-shadow">
                         <CardHeader>
                             <CardTitle className="text-xl">New Quest</CardTitle>
@@ -83,7 +88,6 @@ export default function NewQuest() {
                                     <SkillIcon skillName="speed"/>
                                 </div>
                             </div>
-
                         </CardContent>
                         <CardFooter className="flex space-x-4 items-center justify-center">
                             <Button onClick={handleReject} className="bg-red hover:bg-light_red">Reject</Button>
@@ -100,7 +104,7 @@ export default function NewQuest() {
             {!loading ? (
                 <>
                     <div className="grid w-full items-center gap-1.5">
-                        <Label htmlFor="description" className="text-slate-300">Describe what you're working on</Label>
+                    <Label htmlFor="description" className="text-slate-300">Describe what you're working on</Label>
                         <Input
                             id="description"
                             className={`${error ? 'border-red' : ''} text-white placeholder:text-white/50`}
@@ -119,20 +123,15 @@ export default function NewQuest() {
                             max={completionTimes.length - 1}
                             step={1}
                             onValueChange={handleSliderChange}
-                    />
-                    <p className="text-sm text-white mt-2 text-center">{completionTimes[sliderValue]}</p>
-                </div>
+                        />
+                        <p className="text-sm text-white mt-2 text-center">{completionTimes[sliderValue]}</p>
+                    </div>
                 </>
-                ) : (
-            <ReloadIcon className="mr-2 h-4 w-4 animate-spin text-white" />
-                )
-            }
+            ) : (
+                <ReloadIcon className="mr-2 h-4 w-4 animate-spin text-white" />
+            )}
             <Button onClick={handleSubmit} disabled={loading}>
-                {loading ? (
-                    "Creating..."
-                ) : (
-                    "Create"
-                )}
+                {loading ? "Creating..." : "Create"}
             </Button>
         </div>
     );

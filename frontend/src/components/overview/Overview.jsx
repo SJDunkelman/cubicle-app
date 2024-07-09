@@ -89,7 +89,7 @@ export default function Overview() {
             </div>
 
             <div className="flex-grow flex flex-col w-full relative pt-6">
-                <span className="absolute -top-0 left-0 bg-white px-2 text-xs text-black opacity-50">
+                <span className="absolute -top-0 left-0 bg-white px-2 text-xs text-black opacity-80">
                     Last 24 hours
                   </span>
                 <div className="flex items-center justify-evenly mb-4 px-4 w-full h-16  rounded-md text-white">
