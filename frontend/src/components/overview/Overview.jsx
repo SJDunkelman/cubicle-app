@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import dwarfImage from '/src/assets/images/dwarf.png';
 import appStore from "@/store/appStore.js";
 import Console from "@/components/overview/Console.jsx";
+import UsagePieChart from "@/components/overview/UsagePieChart.jsx"
+import {Button} from "@/components/ui/button.jsx";
+import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
+import ActivityLineChart from "@/components/overview/ActivityLineChart.jsx";
 
 export default function Overview() {
     const { selectedCharacter } = appStore();
+    const [activityStats, setActivityStats] = useState(true);
+
+    const toggleActivity = () => {
+        setActivityStats(!activityStats);
+    };
 
     // Assuming we have a level in the character data. If not, you'll need to fetch or calculate it.
     const characterLevel = 1;
@@ -37,7 +46,7 @@ export default function Overview() {
     return (
         <div className="flex flex-col space-y-4 h-full font-menlo">
             <div className="w-full flex items-top justify-center h-min">
-                <div className="w-1/3 relative rounded-xl h-[40vh]">
+                <div className="w-2/5 relative rounded-xl h-[40vh]">
                     <img
                         src={dwarfImage}
                         alt="Character"
@@ -69,7 +78,7 @@ export default function Overview() {
                         </svg>
                     </div>
                 </div>
-                <div className="w-[40%] p-4 text-white">
+                <div className="w-3/5 p-4 text-white">
                     <div className="mb-4">
                         <p className="font-light text-xs">Active Quest</p>
                         <p className="text-xl tracking-wide leading-tight">Fortify the Frontier this is a long title</p>
@@ -77,13 +86,10 @@ export default function Overview() {
 
                     <Console lines={consoleLines}/>
                 </div>
-                <div className="w-[27%]">
-                    {/*  Leave empty for now  */}
-                </div>
             </div>
 
             <div className="flex-grow flex flex-col w-full relative pt-6">
-                <span className="absolute -top-0 left-0 bg-white px-2 text-xs text-black">
+                <span className="absolute -top-0 left-0 bg-white px-2 text-xs text-black opacity-50">
                     Last 24 hours
                   </span>
                 <div className="flex items-center justify-evenly mb-4 px-4 w-full h-16  rounded-md text-white">
@@ -116,7 +122,37 @@ export default function Overview() {
                     </div>
                 </div>
 
-                <div className="w-full flex-grow border border-white/50 rounded-md relative">
+                <div
+                    className="w-full flex-grow rounded-md relative px-8 flex items-center justify-center">
+                    {!activityStats && (
+                        <Button
+                            onClick={toggleActivity}
+                            variant="outline"
+                            size="icon"
+                            className="bg-white/75 absolute left-2"
+                        >
+                            <ChevronLeftIcon className="h-4 w-4"/>
+                        </Button>
+                    )}
+
+                    <div className="w-[90%] h-full flex justify-center">
+                        {activityStats ? (
+                            <ActivityLineChart />
+                        ) : (
+                            <UsagePieChart/>
+                        )}
+                    </div>
+
+                    {activityStats && (
+                        <Button
+                            onClick={toggleActivity}
+                            variant="outline"
+                            size="icon"
+                            className="bg-white/75 absolute right-2"
+                        >
+                            <ChevronRightIcon className="h-4 w-4"/>
+                        </Button>
+                    )}
                 </div>
             </div>
 

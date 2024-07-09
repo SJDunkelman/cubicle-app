@@ -4,6 +4,17 @@
 
 @layer base {
   :root {
+    --color-jet: #333333;
+    --color-light_grey: #9B9FB5;
+    --color-yellow: #EDC010;
+    --color-light_yellow: #FFCB77;
+    --color-green: #208F4F;
+    --color-light_green: #2ECC71;
+    --color-red: #CC3F0C;
+    --color-light_red: #E85F5C;
+    --color-blue: #548687;
+    --color-light_blue: #C9F0FF;
+
     --background: 0 0% 100%;
     --foreground: 20 14.3% 4.1%;
 

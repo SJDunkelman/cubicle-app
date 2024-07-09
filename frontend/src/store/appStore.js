@@ -2,7 +2,7 @@ import { create } from 'zustand'
 
 const appStore = create((set) => ({
     // Current page
-    currentPage: 'overview',
+    currentPage: 'dashboard',
     setCurrentPage: (page) => set({ currentPage: page }),
 
     // Selected character

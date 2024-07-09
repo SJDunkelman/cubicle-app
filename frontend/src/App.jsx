@@ -34,7 +34,7 @@ function App() {
     };
 
     return (
-        <div className="flex flex-col mx-auto h-screen w-screen pt-7 pb-2 px-2 bg-black font-menlo">
+        <div className="flex flex-col mx-auto h-screen w-screen pt-7 px-2 bg-black font-menlo">
             <NavigationBar/>
             <div className="flex-grow overflow-auto">
                 <div className="flex items-center justify-center h-full p-7">
