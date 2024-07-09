@@ -22,6 +22,8 @@ function App() {
         switch(currentPage) {
             case 'overview':
                 return <Overview />;
+            case 'new_character':
+                return <CreateCharacter />
             case 'stats':
                 return <CharacterStats />;
             case 'new_quest':

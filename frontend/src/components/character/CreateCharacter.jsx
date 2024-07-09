@@ -5,13 +5,14 @@ import { ReloadIcon } from "@radix-ui/react-icons";
 import { RefreshCcw } from "lucide-react";
 
 // Placeholder for character image
-import placeholderImage from '../../assets/images/dwarf.png';
+import dwarfImage from '../../assets/images/dwarf.png';
+import elfImage from "../../assets/images/elf.png";
 
 export default function CreateCharacter() {
     const [character, setCharacter] = useState({
-        name: "Aria Shadowblade",
+        name: "Jon Snow",
         description: "A nimble rogue with a mysterious past, Aria excels in stealth and quick thinking. Her piercing green eyes and jet-black hair make her stand out in any crowd, though she prefers to stick to the shadows.",
-        image: placeholderImage
+        image: dwarfImage
     });
 
     const [isGenerating, setIsGenerating] = useState(false);
@@ -24,7 +25,7 @@ export default function CreateCharacter() {
         setCharacter({
             name: "Thorne Ironheart",
             description: "A stalwart warrior with an unbreakable spirit, Thorne is as dependable as the mountains themselves. His scarred visage and steely gaze speak of countless battles fought and won.",
-            image: placeholderImage
+            image: elfImage
         });
         setIsGenerating(false);
     };
