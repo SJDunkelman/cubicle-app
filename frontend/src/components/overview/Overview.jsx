@@ -24,23 +24,82 @@ export default function Overview() {
     const strokeDasharray = `${progress} ${100 - progress}`;
 
     const consoleLines = [
-        { event_type: 'Info', value: 'Application started' },
-        { event_type: 'Warning', value: 'Low memory' },
-        { event_type: 'Error', value: 'Failed to connect to database' },
-        { event_type: 'Info', value: 'User logged in' },
-        { event_type: 'Info', value: 'User logged in' },
-        { event_type: 'Info', value: 'User logged in' },
-        { event_type: 'Info', value: 'User logged in' },
-        { event_type: 'Info', value: 'User logged in' },
-        { event_type: 'Info', value: 'User logged in User' },
-        { event_type: 'Info', value: 'User logged in' },
-        { event_type: 'Info', value: 'User logged in' },
-        { event_type: 'Info', value: 'User logged in' },
-        { event_type: 'Info', value: 'User logged in' },
-        { event_type: 'Info', value: 'User logged in' },
-        { event_type: 'Info', value: 'User logged in' },
-        { event_type: 'Info', value: 'User logged in' },
-        { event_type: 'Info', value: 'User logged in' },
+        {
+            event_type: "message",
+            content: "Greetings, brave adventurer! The Chieftain's village needs our help. Are you ready to fortify the frontier?"
+        },
+        {
+            event_type: "positive_event",
+            content: "You've started gathering resources for the fortifications. The villagers are hopeful!"
+        },
+        {
+            event_type: "xp",
+            skill: "Construction",
+            amount: 50,
+            content: "Your Construction skill has increased! Keep building those defenses!"
+        },
+        {
+            event_type: "message",
+            content: "The perimeter wall is taking shape. How are those web components coming along?"
+        },
+        {
+            event_type: "negative_event",
+            content: "Oh no! You've been spotted browsing social media. The raiders have noticed a gap in our defenses!"
+        },
+        {
+            event_type: "message",
+            content: "Quick! We need to refocus on strengthening the village's weak points. Can you work on securing the user authentication?"
+        },
+        {
+            event_type: "positive_event",
+            content: "Excellent work on the login system! The village gate is now more secure than ever."
+        },
+        {
+            event_type: "xp",
+            skill: "Intelligence",
+            amount: 75,
+            content: "Your Intelligence has grown! Your clever design choices are paying off."
+        },
+        {
+            event_type: "message",
+            content: "The raiders are approaching! We need to finish the defensive structures. How's the frontend coming along?"
+        },
+        {
+            event_type: "negative_event",
+            content: "Your inactivity has left the eastern wall unfinished. The raiders are exploiting this weakness!"
+        },
+        {
+            event_type: "message",
+            content: "We can still turn this around! Focus on completing the user interface to rally the villagers."
+        },
+        {
+            event_type: "positive_event",
+            content: "The UI is looking great! The villagers are inspired by the sleek design and have redoubled their efforts."
+        },
+        {
+            event_type: "xp",
+            skill: "Creativity",
+            amount: 60,
+            content: "Your Creativity has increased! The village defenses are both functional and aesthetically pleasing."
+        },
+        {
+            event_type: "message",
+            content: "The raiders are at our doorstep! Quick, implement the final features to repel them!"
+        },
+        {
+            event_type: "positive_event",
+            content: "Victory! Your web app is complete, and the village stands strong. The raiders retreat, defeated by your ingenuity!"
+        },
+        {
+            event_type: "xp",
+            skill: "Wisdom",
+            amount: 100,
+            content: "Your Wisdom has greatly increased! You've learned valuable lessons about project management and perseverance."
+        },
+        {
+            event_type: "message",
+            content: "Congratulations, hero! The Chieftain is overjoyed. Your web app has saved the village. What challenges will you take on next?"
+        }
     ];
 
     return (
@@ -95,15 +154,15 @@ export default function Overview() {
                 <div className="flex items-center justify-evenly mb-4 px-4 w-full h-16  rounded-md text-white">
                     <div className="flex flex-col">
                         <p className="text-xs">Left Clicks</p>
-                        <p className="text-2xl">36k</p>
+                        <p className="text-2xl">1.2k</p>
                     </div>
                     <div className="flex flex-col">
                         <p className="text-xs">Right Clicks</p>
-                        <p className="text-2xl">36k</p>
+                        <p className="text-2xl">784</p>
                     </div>
                     <div className="flex flex-col">
                         <p className="text-xs">Keypresses</p>
-                        <p className="text-2xl">36k</p>
+                        <p className="text-2xl">30.2k</p>
                     </div>
                     <div className="flex flex-col">
                         <p className="text-xs">Mouse Movement</p>

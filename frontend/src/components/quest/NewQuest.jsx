@@ -5,7 +5,8 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { ReloadIcon } from "@radix-ui/react-icons";
-import {ThumbsDown, ThumbsUp} from "lucide-react";
+// import {ThumbsDown, ThumbsUp} from "lucide-react";
+import {CheckIcon, Cross2Icon} from "@radix-ui/react-icons";
 import {
     Card,
     CardContent,
@@ -73,7 +74,7 @@ export default function NewQuest() {
                                 been attacking them. His rangers have spotted them growing in size and he is worried
                                 they cannot fend off the next attack.</p>
                             <div className="flex items-center justify-left space-x-4 p-2">
-                                <ThumbsUp className="text-green w-10 h-10 flex-shrink-0"/>
+                                <CheckIcon className="text-green w-6 h-6 flex-shrink-0"/>
                                 <div className="flex space-x-2 items-center">
                                     <SkillIcon skillName="agility"/>
                                     <SkillIcon skillName="strength"/>
@@ -81,7 +82,7 @@ export default function NewQuest() {
                                 </div>
                             </div>
                             <div className="flex items-center justify-left space-x-4 p-2">
-                                <ThumbsDown className="text-red w-10 h-10 flex-shrink-0"/>
+                                <Cross2Icon className="text-red w-6 h-6 flex-shrink-0"/>
                                 <div className="flex space-x-2 items-center">
                                     <SkillIcon skillName="agility"/>
                                     <SkillIcon skillName="strength"/>

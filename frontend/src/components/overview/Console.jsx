@@ -12,9 +12,9 @@ const Console = ({ lines }) => {
     }, [lines]);
 
     useEffect(() => {
-        if (lines.length > 0 && currentIndex < lines[lines.length - 1].value.length) {
+        if (lines.length > 0 && currentIndex < lines[lines.length - 1].content.length) {
             const timer = setTimeout(() => {
-                setTypedText(lines[lines.length - 1].value.slice(0, currentIndex + 1));
+                setTypedText(lines[lines.length - 1].content.slice(0, currentIndex + 1));
                 setCurrentIndex(currentIndex + 1);
             }, 50);
 
@@ -26,25 +26,45 @@ const Console = ({ lines }) => {
         const isLastLine = index === lines.length - 1;
         return (
             <div key={index} className="font-menlo text-xs">
-        <span className={`mr-2 ${getEventTypeColor(line.event_type)}`}>
-          {line.event_type}:
-        </span>
-                <span>
-          {isLastLine ? typedText : line.value}
+                {renderLinePrefix(line.event_type)}
+                <span className={getEventTypeColor(line.event_type)}>
+                    {isLastLine ? typedText : renderLineContent(line)}
                     {isLastLine && <Cursor />}
-        </span>
+                </span>
             </div>
         );
     };
 
+    const renderLinePrefix = (eventType) => {
+        switch (eventType) {
+            case 'message':
+                return <span className="text-light_grey mr-2">&gt; </span>;
+            default:
+                return <span className="text-light_grey mr-2">$ </span>;
+        }
+    };
+
+    const renderLineContent = (line) => {
+        if (line.event_type === 'xp') {
+            return (
+                <>
+                    You've gained <span className="text-light_green">{line.amount} XP</span> in {line.skill}
+                </>
+            );
+        }
+        return line.content;
+    };
+
     const getEventTypeColor = (eventType) => {
-        switch (eventType.toLowerCase()) {
-            case 'error':
-                return 'text-red';
-            case 'warning':
-                return 'text-yellow';
-            case 'info':
+        switch (eventType) {
+            case 'positive_event':
+                return 'text-green';
+            case 'negative_event':
+                return 'text-light_red';
+            case 'message':
                 return 'text-blue';
+            case 'xp':
+                return 'text-light_grey';
             default:
                 return 'text-light_grey';
         }
