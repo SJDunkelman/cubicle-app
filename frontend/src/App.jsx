@@ -5,11 +5,8 @@ import CharacterStats from "@/components/stats/CharacterStats.jsx";
 import NewQuest from "@/components/quest/NewQuest.jsx";
 import QuestSummary from "@/components/quest/QuestSummary.jsx";
 import CreateCharacter from "@/components/character/CreateCharacter.jsx";
+import Overview from "@/components/overview/Overview.jsx"
 import appStore from "@/store/appStore.js";
-
-function Overview() {
-    return null;
-}
 
 function App() {
     const { currentPage } = appStore();
